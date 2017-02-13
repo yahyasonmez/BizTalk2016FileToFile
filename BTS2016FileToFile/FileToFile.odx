@@ -1,0 +1,195 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="7617eb11-288a-49b6-8fef-d5ed3a71ede8" LowerBound="1.1" HigherBound="42.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="BTS2016FileToFile" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="1c41e293-ece8-4356-a578-72b39fc0cf8e" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_BookFileIn" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="00571557-e906-4007-bd32-4b8ea7aeeb86" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_In" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="6809bec0-b587-47c9-9f7a-a96efe517886" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.17">
+                    <om:Property Name="Ref" Value="BTS2016FileToFile.Book" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="03990e18-b51a-4c70-b9b0-765b1230ab7b" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_DiscountedBookFile" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="db9e3bb7-b541-4501-ae50-27550497e93d" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_Out" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="4ec3e386-567a-4a1e-a235-64165e88266d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.27">
+                    <om:Property Name="Ref" Value="BTS2016FileToFile.DiscountedBook" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="9c544425-803e-466e-a504-ed7a453a08ee" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="41.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="FileToFile" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceBody" OID="45ff6557-52a7-4b70-a660-386a0771f67f" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="b6f81957-ad24-4312-98c2-27fb921e08ed" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_BookFileIn" />
+                    <om:Property Name="MessageName" Value="MsgBook" />
+                    <om:Property Name="OperationName" Value="Operation_In" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_MsgIn" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="26e96ab9-4c51-43d0-bc3d-bf5fa00c68cf" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="37.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstMsg_DiscountedPriceMsg" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="da0ae9de-08ab-4cf0-b0e1-bbbe011fb041" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                        <om:Property Name="ClassName" Value="BTS2016FileToFile.BookToDiscountedBook" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Trans_BookToDiscountedBook" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="2a18d8ce-ed90-41a8-b1a1-7830c85b34f3" ParentLink="Transform_InputMessagePartRef" LowerBound="35.89" HigherBound="35.96">
+                            <om:Property Name="MessageRef" Value="MsgBook" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="6d586135-6bfc-4b7b-b1cf-4178b052863c" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.45">
+                            <om:Property Name="MessageRef" Value="MsgDiscountedBook" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="272bb1a3-c952-4815-8acc-3021bd512ddb" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.40">
+                        <om:Property Name="Ref" Value="MsgDiscountedBook" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="c96e6573-867d-445c-ab4d-3493ceb59c0b" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="PortName" Value="Port_DiscountedBookFile" />
+                    <om:Property Name="MessageName" Value="MsgDiscountedBook" />
+                    <om:Property Name="OperationName" Value="Operation_Out" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_MsgOut" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="bf68b588-2f61-42af-8144-1c7dcd2ffe2c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="BTS2016FileToFile.PortType_BookFileIn" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_BookFileIn" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="04543627-5380-4748-a12a-2e580511b02d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="54439ff6-81e1-4e84-99ea-ca412a47e2cd" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="BTS2016FileToFile.PortType_DiscountedBookFile" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_DiscountedBookFile" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="d19b6ab3-d56e-49fb-8671-96b0ec888855" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="85bc8051-6c3c-4789-86e5-ca8bba67defe" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="BTS2016FileToFile.Book" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgBook" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="85031341-5491-48b0-bc6b-01782f545fe3" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="BTS2016FileToFile.DiscountedBook" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgDiscountedBook" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module BTS2016FileToFile
+{
+    internal porttype PortType_BookFileIn
+    {
+        oneway Operation_In
+        {
+            Book
+        };
+    };
+    internal porttype PortType_DiscountedBookFile
+    {
+        oneway Operation_Out
+        {
+            DiscountedBook
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service FileToFile
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_BookFileIn Port_BookFileIn;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_DiscountedBookFile Port_DiscountedBookFile;
+        message Book MsgBook;
+        message DiscountedBook MsgDiscountedBook;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b6f81957-ad24-4312-98c2-27fb921e08ed")]
+            activate receive (Port_BookFileIn.Operation_In, MsgBook);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("26e96ab9-4c51-43d0-bc3d-bf5fa00c68cf")]
+            construct MsgDiscountedBook
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("da0ae9de-08ab-4cf0-b0e1-bbbe011fb041")]
+                transform (MsgDiscountedBook) = BTS2016FileToFile.BookToDiscountedBook (MsgBook);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c96e6573-867d-445c-ab4d-3493ceb59c0b")]
+            send (Port_DiscountedBookFile.Operation_Out, MsgDiscountedBook);
+        }
+    }
+}
+

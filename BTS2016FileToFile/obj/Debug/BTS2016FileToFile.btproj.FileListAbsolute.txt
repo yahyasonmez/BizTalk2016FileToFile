@@ -1,0 +1,4 @@
+C:\workspace\development\BTS2016FileToFile\BTS2016FileToFile\bin\Debug\BTS2016FileToFile.dll
+C:\workspace\development\BTS2016FileToFile\BTS2016FileToFile\bin\Debug\BTS2016FileToFile.pdb
+C:\workspace\development\BTS2016FileToFile\BTS2016FileToFile\obj\Debug\BTS2016FileToFile.dll
+C:\workspace\development\BTS2016FileToFile\BTS2016FileToFile\obj\Debug\BTS2016FileToFile.pdb

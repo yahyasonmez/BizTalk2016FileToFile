@@ -1,0 +1,7 @@
+﻿<ns0:DiscountedBook xmlns:ns0="http://BTS2016.com.tr/FileToFile">
+	<Name>Kitap Adı 5</Name>
+	<Summary>Kitap özet bilgileri 5</Summary>
+	<PublishedYear>2005</PublishedYear>
+	<Price>450</Price>
+	<AuthorInfo>Yahya Sönmez</AuthorInfo>
+</ns0:DiscountedBook>
