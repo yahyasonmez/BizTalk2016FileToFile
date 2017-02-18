@@ -13,3 +13,5 @@ Geliştirme Yapılan Platform ve IDE Bilgileri;
 - BizTalk Server 2016 - CU1
 - SQL Server 2016
 - Visual Studio 2015
+
+Uygulamaya ait blog sayfasından (http://yahyasonmez.com/biztalk-server-2016-ile-uygulama-gelistirme/) ilgili videoyu izleyebilirsiniz.
